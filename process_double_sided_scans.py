@@ -1,3 +1,11 @@
+"""Proceses batch scanned double-sided PDFs into individual files
+
+This script takes PDFs that are scanned in two parts (odd pages and even pages) with a single-sided
+document feeder. It is presumed that the even pages are scanned in reverse order (i.e.
+back-to-front). The odd and even pages are interleaved into a coherent document, with the even pages
+placed in the correct order. Individual documents are then ouput to separate files.
+"""
+
 from PyPDF2 import PdfReader, PdfWriter
 
 INPUT_FILE_ODD = str(input(
